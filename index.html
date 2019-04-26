@@ -62,7 +62,7 @@
         </div>
       </div>
     </div>
-    <!-- about modal end -->
+    <!-- About modal end -->
 
     <!-- Release notes modal -->
     <div class="modal fade" id="rnModal" tabindex="-1" role="dialog" aria- labelledby="myModalLabel" aria-hidden="true">
@@ -200,10 +200,42 @@
 <div>
   <h3>Export</h3>
   <p>Right click on the image to save it or use the export button below</p>
-  <button class="btn btn-primary" id="export">Export!</button>
+  <button class="btn btn-primary" id="export" data-toggle="modal" data-target="#exportModal">Export!</button>
 </div>
 
+<script>
+document.getElementById('export').onclick = function () {
+   var img = canvas.toDataURL('image/png');
+   var link = document.createElement("a");
+   link.download = 'My Meme';
+   link.href = img;
+   document.getElementById('generatedMeme').src=img;
 
+   //link.click();
+ }
+</script>
+
+<!-- Export modal -->
+<div class="modal fade" id="exportModal" tabindex="-1" role="dialog" aria- labelledby="exportModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Exported meme</h4>
+
+      </div>
+      <div class="modal-body">
+          <img id="generatedMeme" style="box-shadow: 0 0 1em 0 dimgrey;" src=""/>
+          <p style="font-family: Helvetica; font-weight: 300">Right Click > Save As</p>
+          <p>OR</p>
+          <p>tap and hold to save (On mobile)</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Export modal end -->
 
 
 </div>

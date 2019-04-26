@@ -165,24 +165,6 @@ document.getElementById('trueSize').onchange = function(ev) {
 };
 
 
-
- document.getElementById('export').onclick = function () {
-    var img = canvas.toDataURL('image/png');
-    var link = document.createElement("a");
-    link.download = 'My Meme';
-    link.href = img;
-    link.click();
-
-    var win = window.open('', '_blank');
-    win.document.write('<img style="box-shadow: 0 0 1em 0 dimgrey;" src="' + img + '"/>');
-    win.document.write('<h1 style="font-family: Helvetica; font-weight: 300">Right Click > Save As OR tap and hold to save (On mobile)<h1>');
-    win.document.body.style.padding = '1em';
-};
-
-
-
-
-
 function style(font, size, align, base) {
   ctx.font = size + 'px ' + font;
   ctx.textAlign = align;
