@@ -207,7 +207,6 @@ function draw() {
 	ctx.fillStyle = '#000';
 	ctx.strokeStyle = '#fff';
 	ctx.drawBreakingText(middle, canvas.width/2, _textSizeMiddle+padding+300, null, 1, 'fill');
-	//ctx.drawBreakingText(middle, canvas.width/2, _textSizeMiddle+padding+300, null, 1, 'stroke');
 
 
   // draw bottom text
@@ -220,9 +219,24 @@ function draw() {
   ctx.drawBreakingText(bottom, canvas.width/2, canvas.height-padding-height, null, 1, 'stroke');
 }
 
+function setImage(imageId) {
+	switch (imageId.toString()) {
+		case "1":
+			image.src = 'assets/eucompatiblememe.png';
+			break;
+			case "2":
+				image.src = 'assets/eucompatiblememeSplit.png';
+				break;
+		default:
+			image.src = 'assets/eucompatiblememe.png';
+	}
 
+}
 
-
+$("[data-image-id]").on("click", function() {
+	var id = $(this).attr("data-image-id");
+	setImage(id);
+})
 
 image.src = 'assets/eucompatiblememe.png';
 document.getElementById('textSizeTop').value = textSizeTop;

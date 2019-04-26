@@ -20,6 +20,12 @@ footer {
 
 }
 
+[data-image-id] {
+  width: 50%;
+  height: 50%;
+}
+
+
 * {
   box-sizing: border-box;
   font-family: 'Open Sans';
