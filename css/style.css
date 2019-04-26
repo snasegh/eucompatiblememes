@@ -15,7 +15,3 @@ input[type='text'], input[type='range'] {
 h3 > i.fa {
   margin-right: .2em;
 }
-
-[data-image-id] {
-  width: 50px;
-}

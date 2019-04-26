@@ -122,18 +122,12 @@
     </div>
     <!-- Privacy policy modal end -->
 
-    <div class="container">
-      <div class="row justify-content-md-center">
-        <div class="col-md-auto">
-          <img src="assets/eucompatiblememe.png" data-image-id="1">
-          <p>1 pane</p>
-        </div>
-        <div class="col-md-auto">
-          <img src="assets/eucompatiblememeSplit.png" data-image-id="2">
-          <p>2 panes</p>
-        </div>
-      </div>
-    </div>
+    <!-- Meme format -->
+    
+    <img class="thumb" src="assets/thumb_eucompatiblememe.png" data-image-id="1">
+    <img class="thumb" src="assets/thumb_eucompatiblememeSplit.png" data-image-id="2">
+
+    <!-- Meme format end -->
 
     <!-- canvas -->
 
@@ -226,8 +220,8 @@
 
       </div>
       <div class="modal-body">
-          <img id="generatedMeme" style="box-shadow: 0 0 1em 0 dimgrey;" src=""/>
-          <p>Right Click > Save As OR tap and hold to save (On mobile)</p>
+        <img class="meme" id="generatedMeme" style="box-shadow: 0 0 1em 0 dimgrey;" src=""/>
+        <p>Right Click > Save As OR tap and hold to save (On mobile)</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -251,9 +245,9 @@
 </footer>
 <script>
 $('#exportModal').on('shown.bs.modal', function (event) {
-   console.log(event);
-   var img = canvas.toDataURL('image/png');
-   document.getElementById('generatedMeme').src = img;
+  console.log(event);
+  var img = canvas.toDataURL('image/png');
+  document.getElementById('generatedMeme').src = img;
 });
 </script>
 </body>
