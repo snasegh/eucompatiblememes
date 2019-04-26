@@ -206,12 +206,7 @@
 <script>
 document.getElementById('export').onclick = function () {
    var img = canvas.toDataURL('image/png');
-   var link = document.createElement("a");
-   link.download = 'My Meme';
-   link.href = img;
    document.getElementById('generatedMeme').src=img;
-
-   //link.click();
  }
 </script>
 
@@ -220,14 +215,12 @@ document.getElementById('export').onclick = function () {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Exported meme</h4>
+        <h4 class="modal-title" id="exportModalLabel">Exported meme</h4>
 
       </div>
       <div class="modal-body">
           <img id="generatedMeme" style="box-shadow: 0 0 1em 0 dimgrey;" src=""/>
-          <p style="font-family: Helvetica; font-weight: 300">Right Click > Save As</p>
-          <p>OR</p>
-          <p>tap and hold to save (On mobile)</p>
+          <p>Right Click > Save As OR tap and hold to save (On mobile)</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -240,7 +233,15 @@ document.getElementById('export').onclick = function () {
 
 </div>
 </div>
-
+<script>
+document.getElementById('export').onclick = function () {
+   var img = canvas.toDataURL('image/png');
+   var link = document.createElement("a");
+   link.download = 'My Meme';
+   link.href = img;
+   document.getElementById('generatedMeme').src=img;
+ }
+</script>
 <script type="text/javascript" src="js/index.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
